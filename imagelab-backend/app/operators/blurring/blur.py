@@ -12,7 +12,7 @@ class Blur(BaseOperator):
         point_y = int(self.params.get("pointY", -1))
         return cv2.blur(
             image,
-            (height_size, width_size),
+            (width_size, height_size),
             anchor=(point_x, point_y),
             borderType=cv2.BORDER_DEFAULT,
         )
