@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 
 from app.operators.base import BaseOperator
+from app.operators.blurring.validation import validate_positive_kernel_dim
 
 
 class Blur(BaseOperator):
@@ -11,12 +12,12 @@ class Blur(BaseOperator):
         point_x = int(self.params.get("pointX", -1))
         point_y = int(self.params.get("pointY", -1))
 
-        if width_size < 1 or height_size < 1:
-            raise ValueError(f"Blur kernel dimensions must be >= 1, got width={width_size}, height={height_size}")
+        validate_positive_kernel_dim(width_size, "widthSize")
+        validate_positive_kernel_dim(height_size, "heightSize")
 
         return cv2.blur(
             image,
-            (width_size, height_size),
+            (width_size, height_size),  # OpenCV ksize convention: (width, height)
             anchor=(point_x, point_y),
             borderType=cv2.BORDER_DEFAULT,
         )

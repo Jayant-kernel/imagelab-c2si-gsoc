@@ -112,4 +112,35 @@ export const filteringBlocks = [
     style: "filtering_style",
     tooltip: "Applies image sharpening to enhance edges and details",
   },
+  {
+    type: "filtering_contourdetection",
+    message0: "Draw Contours with mode %1 %2 method %3 %4 color %5 %6 thickness %7",
+    args0: [
+      {
+        type: "field_dropdown",
+        name: "mode",
+        options: [
+          ["External", "EXTERNAL"],
+          ["Tree", "TREE"],
+        ],
+      },
+      { type: "input_dummy" },
+      {
+        type: "field_dropdown",
+        name: "method",
+        options: [
+          ["Simple", "SIMPLE"],
+          ["None", "NONE"],
+        ],
+      },
+      { type: "input_dummy" },
+      { type: "field_colour", name: "rgbcolors_input", colour: "#00ff00" },
+      { type: "input_dummy" },
+      { type: "field_number", name: "thickness", value: 2, min: 1, max: 50 },
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    style: "filtering_style",
+    tooltip: "Detects contours on an image and renders them over the original graphic.",
+  },
 ];

@@ -30,6 +30,7 @@ export const categories: CategoryInfo[] = [
       { type: "geometric_rotateimage", label: "Rotate Image" },
       { type: "geometric_affineimage", label: "Affine Transform" },
       { type: "geometric_scaleimage", label: "Scale Image" },
+      { type: "geometric_resizeimage", label: "Resize Image (Pixels)" },
     ],
   },
   {
@@ -38,6 +39,7 @@ export const categories: CategoryInfo[] = [
     colour: "#FF8A65",
     blocks: [
       { type: "imageconvertions_grayimage", label: "Gray Image" },
+      { type: "imageconvertions_clahe", label: "CLAHE" },
       { type: "imageconvertions_channelsplit", label: "Channel Split" },
       { type: "imageconvertions_graytobinary", label: "Gray to Binary" },
       { type: "imageconvertions_colormaps", label: "Color Maps" },
@@ -86,6 +88,8 @@ export const categories: CategoryInfo[] = [
       { type: "filtering_erosion", label: "Erosion" },
       { type: "filtering_dilation", label: "Dilation" },
       { type: "filtering_morphological", label: "Morphological" },
+      { type: "filtering_contourdetection", label: "Contour Detection" },
+      { type: "filtering_cannyedge", label: "Canny Edge Detection" },
     ],
   },
   {
@@ -99,6 +103,15 @@ export const categories: CategoryInfo[] = [
       { type: "border_for_all", label: "Border (All Sides)" },
       { type: "border_each_side", label: "Border (Each Side)" },
       { type: "thresholding_otsuthreshold", label: "Otsu Threshold" },
+    ],
+  },
+  {
+    name: "Segmentation",
+    icon: "Layers",
+    colour: "#26A69A",
+    blocks: [
+      { type: "segmentation_watershed", label: "Watershed" },
+      { type: "segmentation_kmeans", label: "K-Means" },
     ],
   },
   {
